@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+
+<style>
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  font-family: 'Comfortaa', cursive;
+}
+.button {
+    background-color: #3498DB;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.inputfile{
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #3498DB;
+    display: inline-block;
+}
+
+.inputfile:focus,
+.inputfile:hover {
+    background-color: #3498DB;
+}</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted w3-text-blue">Resize</h3>
+      </div>
+      <hr/>
+      <div class="w3-text-blue">
+	  <!--<a href="{{ url_for('download', filename=filename) }}">Download</a>-->
+	  <p>Original File Size: {{filesize_original}} KB</p>
+	  <p>Resized File Size: {{filesize_resized}} KB</p>
+      <form action="download" method="GET" enctype="multipart/form-data"> <!--"upload" is the directory where the action takes place-->
+
+		<input type="submit" value="Download" class="button">
+
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
+ 

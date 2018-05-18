@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+
+<style>
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  font-family: 'Comfortaa', cursive;
+}
+.button {
+    background-color: #3498DB;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.inputfile{
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #3498DB;
+    display: inline-block;
+}
+
+.inputfile:focus,
+.inputfile:hover {
+    background-color: #3498DB;
+}
+.show {display:block;}
+</style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted w3-text-blue">Resize</h3>
+      </div>
+      <hr/>
+      <div>
+	  <h4 class="w3-text-blue">Upload your image to resize</h4>
+	  <p class="w3-text-blue">Supported original image format: png, jpg, jpeg, bmp</p>
+      <form action="upload" method="POST" enctype="multipart/form-data"> <!--"upload" is the directory where the action takes place-->
+      <div class="form-group">
+        <input type="file" name="file" class = "inputfile">
+		<br />
+		<br />
+
+		  <table>
+		    <tr>
+			  <td align="right" class="w3-text-blue">Width (1-5000):</td>
+			  <td align="left"><input type="number" name="width" min="1" max="5000" class="w3-text-blue" /></td>
+			</tr>
+			<tr>
+			  <td align="right" class="w3-text-blue">Height (1-5000):</td>
+			  <td align="left"><input type="number" name="height" min="1" max="5000" class="w3-text-blue" /></td>
+			</tr>
+		</table>
+
+		<br />
+		<input  type="submit" value="Upload" class="button">
+        </div>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
+
