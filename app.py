@@ -32,7 +32,7 @@ if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
     os.makedirs(app.config['DOWNLOAD_FOLDER'])
 
 # These are the extension that we are accepting to be uploaded
-app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg','bmp'])
+app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg','bmp','gif','svg',])
 # Cache related to prevent cache problems
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 300
 # Limit the upload file size
@@ -105,7 +105,6 @@ def upload():
             
             # Redirect the user to the resize_image route
             return redirect(url_for('resize_image'))
-
 # This route is expecting a parameter containing the name
 # of a file. Then it will locate that file on the upload
 # directory and show it on the browser, so if the user uploads
@@ -124,7 +123,9 @@ def resize_image():
 
     # Save resized image
     filename_resized_prefix = filename.rsplit('.', 1)[0]
-    filename_resized = filename_resized_prefix + '_resized.jpeg'
+    #ext = os.path.splitext(filename)[1][1:].strip().lower()
+    #if ext in app.config['ALLOWED_EXTENSIONS']:
+    filename_resized = filename_resized_prefix + 'resized_.jpeg'
     session['filename_resized'] = filename_resized
 
     dst_path = os.path.join(app.config['DOWNLOAD_FOLDER'], filename_resized)
