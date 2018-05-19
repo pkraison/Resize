@@ -6,7 +6,7 @@ import os
 # browser the file that the user just uploaded
 from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory, make_response
 from werkzeug import secure_filename
-from PIL import Image
+#from PIL import Image
 import cv2
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
