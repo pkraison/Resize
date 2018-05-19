@@ -9,7 +9,7 @@ itsdangerous==0.24
 jieba==0.39
 Jinja2==2.7.3
 numpy==1.14.3
-opencv-contrib-python==3.4.0.14
+opencv-python
 pipenv==2018.5.18
 Werkzeug==0.9.6
 WTForms==2.1
