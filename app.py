@@ -7,8 +7,7 @@ import os
 # browser the file that the user just uploaded
 from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory, make_response
 from werkzeug import secure_filename
-#from PIL import Image
-import cv2
+from PIL import Image
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
@@ -44,7 +43,7 @@ def allowed_file(filename):
     return ('.' in filename) and ((filename.rsplit('.', 1)[1]).lower() in app.config['ALLOWED_EXTENSIONS'])
 
 def resizer_defined(img, width = None, height = None):
-    res = cv2.resize(src = img, dsize = (width, height), fx = 0, fy = 0, interpolation = cv2.INTER_AREA)
+    res = img.resize((width, height), Image.ANTIALIAS)
     return res
 
 # Calculate the total size of all files in a directory
@@ -117,7 +116,7 @@ def resize_image():
 
     # Read image
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    img = cv2.imread(file_path)
+    img = Image.open(file_path)
     width = int(params['width'])
     height = int(params['height'])
     res = resizer_defined(img, width = width, height = height)
@@ -132,7 +131,7 @@ def resize_image():
     dst_path = os.path.join(app.config['DOWNLOAD_FOLDER'], filename_resized)
 
     # Save resized image
-    cv2.imwrite(filename = dst_path, img = res)
+    res.save(dst_path)
 
     # Original image file size in byte
     filesize_original = os.path.getsize(file_path)
