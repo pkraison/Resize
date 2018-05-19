@@ -1,8 +1,6 @@
-Python 2.7.12
 aniso8601==0.82
 Flask==0.10.1
 Flask-Bootstrap==3.3.7.1
--e git://github.com/FelixLoether/flask-uploads@60b9f5ff78a2aba31dcc7dd9f7f0923ee76d1732#egg=Flask_Image_Upload_Thing
 Flask-RESTful==0.2.12
 Flask-Uploads==0.2.1
 gunicorn==19.0.0
