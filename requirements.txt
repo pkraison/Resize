@@ -1,3 +1,4 @@
+Python 2.7.12
 aniso8601==0.82
 Flask==0.10.1
 Flask-Bootstrap==3.3.7.1
