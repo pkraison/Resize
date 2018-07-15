@@ -7,6 +7,7 @@ import os
 # browser the file that the user just uploaded
 from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory, make_response
 from werkzeug import secure_filename
+import logging
 from PIL import Image
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
@@ -21,7 +22,8 @@ session = {'filename': '', 'params': {}, 'filename_resized': ''}
 
 # Initialize the Flask application
 app = Flask(__name__)
-
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 # This is the path to the upload directory
 app.config['UPLOAD_FOLDER'] = os.path.join(THIS_FOLDER, 'uploads/')
 app.config['DOWNLOAD_FOLDER'] = os.path.join(THIS_FOLDER, 'downloads/')
