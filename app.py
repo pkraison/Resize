@@ -8,6 +8,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory, make_response
 from werkzeug import secure_filename
 import logging
+import sys
 from PIL import Image
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
