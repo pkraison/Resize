@@ -134,7 +134,7 @@ def resize_image():
     dst_path = os.path.join(app.config['DOWNLOAD_FOLDER'], filename_resized)
 
     # Save resized image
-    res.save(dst_path)
+    res.convert('RGB').save(dst_path)
 
     # Original image file size in byte
     filesize_original = os.path.getsize(file_path)
