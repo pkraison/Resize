@@ -11,5 +11,5 @@ Jinja2==2.7.3
 numpy==1.14.3
 Pillow==5.1.0
 pipenv==2018.5.18
-Werkzeug==0.9.6
+Werkzeug==0.15.3
 WTForms==2.1
