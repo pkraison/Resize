@@ -3,7 +3,7 @@ Flask==0.10.1
 Flask-Bootstrap==3.3.7.1
 Flask-RESTful==0.2.12
 Flask-Uploads==0.2.1
-gunicorn==19.0.0
+gunicorn==19.5.0
 idna==2.6
 itsdangerous==0.24
 jieba==0.39
