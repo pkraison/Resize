@@ -1,5 +1,5 @@
 aniso8601==0.82
-Flask==0.10.1
+Flask==1.0
 Flask-Bootstrap==3.3.7.1
 Flask-RESTful==0.2.12
 Flask-Uploads==0.2.1
